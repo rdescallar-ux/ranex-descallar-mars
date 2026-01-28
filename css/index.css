@@ -1,0 +1,124 @@
+body {
+  background-color: #a7f4d7;
+  color: #333; 
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
+}
+main {
+  width: 80%; 
+  margin: 20px auto; 
+  padding: 15px; 
+}
+
+section {
+  margin-bottom: 30px; 
+}
+#connect-section { 
+  text-align: center;
+}
+h1, h2 {
+  color: #007bff; 
+  font-weight: 700; 
+  font-size: 2.5rem; 
+}
+#my-name { 
+  color: #ff5733; 
+  border-bottom: 2px solid #ff5733;
+  padding-bottom: 10px;
+}
+#experience-list li {
+  background-color: #ffffff; 
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  list-style-type: none; 
+}
+#connect-links a {
+  text-decoration: none; 
+  color: #1a0dab; 
+  padding: 5px 10px;
+  border: 1px solid #1a0dab;
+  border-radius: 3px;
+  display: inline-block; 
+  margin: 5px;
+}
+
+#connect-links a:hover {
+  background-color: #1a0dab;
+  color: white;
+}
+#experience .job-item {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    margin-bottom: 20px;
+}
+
+.job-title {
+    font-weight: bold;
+    flex-basis: 70%; 
+}
+
+.job-dates {
+    text-align: right;
+    flex-basis: 30%; 
+}
+
+.job-description {
+    flex-basis: 100%; 
+    margin-top: 5px;
+}
+#connect .social-links-container { 
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+h1 {
+  font-size: 1.5rem;
+  color: black;
+}
+
+ul {
+  margin: 1rem;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+#name {
+  font-size: 1.25rem;
+  font-style: normal;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2rem;          
+    color: darkblue;         
+  }
+
+  ul {
+    padding: 1rem;            
+    background-color: #f0f0f0;
+  }
+
+  #name {
+    font-size: 1.75rem;       
+    font-style: italic;      
+  }
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 2.5rem;        
+    color: purple;            
+  }
+
+  ul {
+    margin: 2rem;             
+    background-color: #ddd;   
+  }
+
+  #name {
+    font-size: 2rem;          
+    letter-spacing: 2px;      
+  }
+}
