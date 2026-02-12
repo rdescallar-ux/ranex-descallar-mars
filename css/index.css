@@ -6,7 +6,7 @@ body {
 main {
   width: 80%; 
   margin: 20px auto; 
-  padding: 15px; 
+  padding: 150px; 
 }
 
 section {
@@ -120,5 +120,25 @@ ul {
   #name {
     font-size: 2rem;          
     letter-spacing: 2px;      
+  }
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+#skills li {
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  #skills ul {
+    flex-direction: column;
   }
 }
