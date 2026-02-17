@@ -13,6 +13,7 @@
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#connect">Connect</a>
+    <li><a href="#leave-message">Leave a Message</a></li>
       </nav>
     </header>
   <h1>RANEX DESCALLAR</h1>
@@ -34,9 +35,6 @@
     <li> I Passed CompTIA A+ Certification</li>
   </ul>
   </section>
-<section id="skills">
-    <h2>Skills</h2>
-</section>
 <section id="projects">
     <h2>Projects</h2>
     <ul id="projects-list">
@@ -44,15 +42,34 @@
 </section>
 <section id="skills">
   <h2>Skills</h2>
-  <ul></ul>
+    <ul id="skills-list">
+    </ul>
 </section>
-<section id="connect"></section>
+<section id="connect">
     <h2>Connect</h2>
   <ul>
   <li><a href="mailto:rdescallar@hertford.k12.nc.us">Email Me</a></li>
   <li><a href="https://github.com/rdescallar-ux/ranex-descallar-mars" target="_blank">My Github</a></li>
   </ul>
   </section>
-</body> 
 <script src="js/index.js"></script>
+<section id="leave-message">
+  <h2>Leave a Message</h2>
+  <form name="leave_message">
+    <label for="usersName">Name:</label><br>
+    <input type="text" name="usersName" required><br><br>
+    <label for="usersEmail">Email:</label><br>
+    <input type="email" name="usersEmail" required><br><br>
+    <label for="usersMessage">Message:</label><br>
+    <textarea name="usersMessage" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <section id="messages">
+  <h2>Messages</h2>
+  <ul></ul>
+</section>
+
+</section>
+
+</body> 
 </html>
