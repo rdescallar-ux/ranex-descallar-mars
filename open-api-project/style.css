@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.card {
+  margin: 20px auto;
+  padding: 20px;
+  width: 250px;
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
