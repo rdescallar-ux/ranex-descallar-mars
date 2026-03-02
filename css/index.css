@@ -142,3 +142,67 @@ ul {
     flex-direction: column;
   }
 }
+
+/* Message Form Styling */
+form[name="leave_message"] {
+  max-width: 500px;
+  margin: 20px 0;
+}
+
+/* Form Fields */
+form[name="leave_message"] input,
+form[name="leave_message"] textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Textarea Specific */
+form[name="leave_message"] textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Form Buttons Only (not all site buttons) */
+form[name="leave_message"] button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #0077cc;
+  color: white;
+  font-size: 14px;
+}
+
+form[name="leave_message"] button:hover {
+  background-color: #005fa3;
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+  input, textarea, button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+#messages {
+  display: none;
+}
+
+#projects ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#projects li {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+}

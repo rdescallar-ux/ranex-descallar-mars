@@ -12,6 +12,12 @@ const footerElement = document.querySelector("footer");
 
 const copyright = document.createElement("p");
 
+copyright.textContent = `© ${thisYear} Ranex Descallar`;
+
+footerElement.appendChild(copyright);
+
+const copyright = document.getElementById("copyright");
+
 copyright.innerHTML = "Ranex Descallar © " + thisYear;
 
 footerElement.appendChild(copyright);
@@ -28,9 +34,11 @@ for (let i = 0; i < skills.length; i++) {
     skillsList.appendChild(skill);
 }
 const messageForm = document.querySelector("form[name='leave_message']");
-messageForm.addEventListener("submit", function(event) {
+const messageSection = document.getElementById("messages");
+const messageList = messageSection.querySelector("ul");
 
-  event.preventDefault(); // Stop page refresh
+messageForm.addEventListener("submit", function(event) {
+  event.preventDefault();
 
   const usersName = event.target.usersName.value;
   const usersEmail = event.target.usersEmail.value;
@@ -38,13 +46,6 @@ messageForm.addEventListener("submit", function(event) {
 
   console.log(usersName, usersEmail, usersMessage);
 
-  // Select message section
-  const messageSection = document.getElementById("messages");
-
-  // Select ul inside message section
-  const messageList = messageSection.querySelector("ul");
-
-  // Create new list item
   const newMessage = document.createElement("li");
 
   newMessage.innerHTML = `
@@ -52,35 +53,73 @@ messageForm.addEventListener("submit", function(event) {
     <span> ${usersMessage} </span>
   `;
 
-  // Create remove button
   const removeButton = document.createElement("button");
   removeButton.innerText = "remove";
   removeButton.type = "button";
 
   removeButton.addEventListener("click", function() {
-    const entry = removeButton.parentNode;
-    entry.remove();
+    newMessage.remove();
+
+    if (messageList.children.length === 0) {
+      messageSection.style.display = "none";
+    }
   });
 
+  const editButton = document.createElement("button");
+  editButton.innerText = "edit";
+  editButton.type = "button";
+
+  editButton.addEventListener("click", function() {
+    const newText = prompt("Edit your message:");
+    if (newText !== null && newText.trim() !== "") {
+      newMessage.querySelector("span").innerText = " " + newText;
+    }
+  });
+
+  newMessage.appendChild(editButton);
   newMessage.appendChild(removeButton);
 
   messageList.appendChild(newMessage);
 
-  messageForm.reset(); // Clear form
-
-});
-if (messageList.children.length > 0) {
-  messageSection.style.display = "block";
-}
-const editButton = document.createElement("button");
-editButton.innerText = "edit";
-editButton.type = "button";
-
-editButton.addEventListener("click", function() {
-  const newText = prompt("Edit your message:");
-  if (newText !== null) {
-    newMessage.querySelector("span").innerText = " " + newText;
+  if (messageList.children.length > 0) {
+    messageSection.style.display = "block";
   }
+
+  messageForm.reset();
 });
 
-newMessage.appendChild(editButton);
+const repoList = document.querySelector("#repo-list");
+
+fetch("https://api.github.com/users/rdescallar-ux/repos")
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(repo => {
+      const listItem = document.createElement("li");
+      const link = document.createElement("a");
+
+      link.href = repo.html_url;
+      link.textContent = repo.name;
+      link.target = "_blank";
+
+      listItem.appendChild(link);
+      repoList.appendChild(listItem);
+    });
+  })
+  .catch(error => {
+    console.error("Error fetching repositories:", error);
+  });
+
+  const projectSection = document.getElementById("projects");
+
+  const projectList = projectSection.querySelector("ul");
+
+  repositories.forEach(repo => {
+    const project = document.createElement("li");
+    project.innerText = repo.name;
+    projectList.appendChild(project);
+});
+
+.catch(error => {
+    projectList.innerText = "Unable to load projects at this time.";
+});
+
